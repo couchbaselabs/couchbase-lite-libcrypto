@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e
 
 OPENSSL_CONFIG_OPTIONS=$(cat config-params.txt)
@@ -11,7 +13,7 @@ mkdir $OUTPUT_DIR
 build_linux() {
   ARCH=$1
   echo "Building linux libcrypto.a for ${ARCH}"
-
+  
   cd vendor/openssl
   git clean -dfx && git checkout -f
   
@@ -19,9 +21,9 @@ build_linux() {
   ./Configure dist
 
   if [[ $ARCH == "x86_64" || $ARCH == "amd64" ]]; then
-    ./config ${OPENSSL_CONFIG_OPTIONS}"
+    ./config ${OPENSSL_CONFIG_OPTIONS}
   else
-    setarch i386 ./config ${OPENSSL_CONFIG_OPTIONS} -m32"
+    setarch i386 ./config ${OPENSSL_CONFIG_OPTIONS} -m32
   fi
 
   # Remove test
@@ -35,7 +37,8 @@ build_linux() {
 
   # Copy libcrypto.a to temp output directory:
   file libcrypto.a
-  cp libcrypto.a ${OUTPUT_DIR}/${ARCH}
+  mkdir ../../${OUTPUT_DIR}/${ARCH}
+  cp libcrypto.a ../../${OUTPUT_DIR}/${ARCH}
 
   # Cleanup:
   git clean -dfx && git checkout -f
@@ -45,3 +48,5 @@ build_linux() {
 build_linux "x86"
 build_linux "x86_64"
 build_linux "amd64"
+
+
