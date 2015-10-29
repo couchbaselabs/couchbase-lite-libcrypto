@@ -16,9 +16,8 @@ git clean -dfx && git checkout -f
 cd ../../
 
 archs=(armeabi armeabi-v7a arm64-v8a mips mips64 x86 x86_64)
-#archs=(armeabi-v7a)
-#archs=(x86_64)
-#archs=(armeabi-v7a arm64-v8a)
+
+openssl_config_options=$(cat config-params.txt)
 
 for arch in ${archs[@]}; do
     xLIB="/lib"
@@ -80,8 +79,6 @@ for arch in ${archs[@]}; do
     cd vendor/openssl
 
     xCFLAGS="-fPIC -I$ANDROID_DEV/include -B$ANDROID_DEV/$xLIB"
-
-    openssl_config_options=$(cat config-params.txt)
 
     # We do not need this as we are not going to install anything (Pasin):
     #perl -pi -e 's/install: all install_docs install_sw/install: install_docs install_sw/g' Makefile.org
