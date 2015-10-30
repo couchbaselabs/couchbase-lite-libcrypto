@@ -21,9 +21,9 @@ build_linux() {
   ./Configure dist
 
   if [[ $ARCH == "x86_64" || $ARCH == "amd64" ]]; then
-    ./config ${OPENSSL_CONFIG_OPTIONS}
+    ./config ${OPENSSL_CONFIG_OPTIONS} -fPIC
   else
-    setarch i386 ./config ${OPENSSL_CONFIG_OPTIONS} -m32
+    setarch i386 ./config ${OPENSSL_CONFIG_OPTIONS} -m32 -fPIC
   fi
 
   # Remove test
