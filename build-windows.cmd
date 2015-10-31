@@ -1,8 +1,8 @@
 @echo off
 
 :: Visual Studio Environment
-set VS2013="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\vcvars32.bat"
-set VS2013_64="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat"
+set VSCMD="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\vcvars32.bat"
+set VSCMD_64="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat"
 
 :: OPENSSL Configuration Options
 set /p OPENSSL_CONFIG_OPTIONS=<config-params-windows.txt
@@ -20,7 +20,7 @@ call git checkout -f
 :: Build 32 bit binaries
 
 :: Run Visual Studio 32 bits shell
-call %VS2013%
+call %VSCMD%
 
 :: Set make output directory
 set MAKE_OUTPUT_DIR="%CD%\output\openssl-32"
@@ -45,7 +45,7 @@ call git checkout -f
 :: Build 64 bit binaries
 
 :: Run Visual Studio 64 bits shell
-call %VS2013_64%
+call %VSCMD_64%
 
 :: Set make output directory
 set MAKE_OUTPUT_DIR="%CD%\output\openssl-64"
