@@ -35,7 +35,7 @@ build_osx() {
 
   # Config:
   ./Configure dist
-  ./Configure ${TARGET} ${OPENSSL_CONFIG_OPTIONS} --openssldir="${TMP_OUTPUT_DIR}"
+  ./Configure ${TARGET} ${OPENSSL_CONFIG_OPTIONS} --openssldir="${TMP_OUTPUT_DIR} -fPIC"
   
   # Remove test:
   rm -rf test
@@ -91,7 +91,7 @@ build_ios() {
 
   # Config:
   ./Configure dist
-  ./Configure ${TARGET} ${OPENSSL_CONFIG_OPTIONS} --openssldir="${output_tmp_dir}"
+  ./Configure ${TARGET} ${OPENSSL_CONFIG_OPTIONS} --openssldir="${output_tmp_dir} -fPIC"
 
   # Remove test:
   rm -rf test
