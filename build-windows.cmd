@@ -1,8 +1,7 @@
 @echo off
 
 :: Visual Studio Environment
-set VSCMD="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\vcvars32.bat"
-set VSCMD_64="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat"
+set VSCMD="%VCINSTALLDIR%vcvarsall.bat"
 
 :: OPENSSL Configuration Options
 set /p OPENSSL_CONFIG_OPTIONS=<config-params-windows.txt
@@ -20,7 +19,8 @@ call git checkout -f
 :: Build 32 bit binaries
 
 :: Run Visual Studio 32 bits shell
-call %VSCMD%
+setlocal
+call %VSCMD% x86
 
 :: Set make output directory
 set MAKE_OUTPUT_DIR="%CD%\output\openssl-32"
@@ -41,11 +41,13 @@ copy %MAKE_OUTPUT_DIR%\lib\libeay32.lib %OUTPUT_DIR%\x86
 :: Reset and done
 call git clean -dfx
 call git checkout -f
+endlocal
 
 :: Build 64 bit binaries
 
 :: Run Visual Studio 64 bits shell
-call %VSCMD_64%
+setlocal
+call %VSCMD% amd64
 
 :: Set make output directory
 set MAKE_OUTPUT_DIR="%CD%\output\openssl-64"
@@ -72,3 +74,4 @@ call git checkout -f
 
 :: Exit
 cd ..\..\
+endlocal
