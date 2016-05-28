@@ -73,7 +73,7 @@ Run the build script. The binaries will be output at `libs/linux`.
 ##3.4 Windows
 
 ###Requirements
-1. [Visual Studio 2013 or 2015](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
+1. [Visual Studio 2015](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx)
 2. [Windows SDK](https://msdn.microsoft.com/en-us/windows/desktop/bg162891.aspx).
 3. [Active Perl](http://www.activestate.com/activeperl) or [Strawberry Perl](http://strawberryperl.com)
 
@@ -83,17 +83,10 @@ Note that the build-windows.cmd script is configured with Visual Studio 2013.
 1. Make sure that the path to the `nmake` tool is included into the PATH Environment.
 
  ```
- Visual 2013: C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
  Visual 2015: C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
  ```
 2. Run the build script. The binaries will be output at `libs/windows`.
 
  ```
  C:\couchbase-lite-libcrypto>build-windows.cmd
- ```
- 
- To build with Visual Studio 2015, the VSCMD and VSCMD_64 variable in the build-windows.cmd need to change:
- ```
- set VSCMD="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat"
- set VSCMD_64="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\vcvars64.bat"
  ```
