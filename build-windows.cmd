@@ -1,9 +1,8 @@
 @echo off
 
 :: Visual Studio Environment
-set VSCMD="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\vcvars32.bat"
-set VSCMD_64="C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\amd64\vcvars64.bat"
-
+set VSCMD="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat"
+set VSCMD_64="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64\vcvars64.bat"
 :: OPENSSL Configuration Options
 set /p OPENSSL_CONFIG_OPTIONS=<config-params-windows.txt
 
