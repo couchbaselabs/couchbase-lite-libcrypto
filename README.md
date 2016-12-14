@@ -15,7 +15,7 @@ $git submodule update --init --recursive
 
 Run the following command on a Mac or Linux machine. The headers will be output at `libs/include`.
 ```
-$./generate-heders.sh
+$./generate-headers.sh
 ```
 
 ###3. Build the binaries for each platform
