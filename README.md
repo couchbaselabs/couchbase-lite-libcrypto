@@ -26,19 +26,28 @@ $./generate-headers.sh
 1. [Android NDK](http://developer.android.com/ndk/index.html)
 2. Mac OSX Machine
 
-###Build Steps
+###Common Build Steps
 1. Make sure that you have the `ANDROID_NDK_HOME` variable defined. For example,
 
  ```
  #.bashrc:
  export ANDROID_NDK_HOME=~/Android/android-ndk-r10e
  ```
-2. Run the build script. The binaries will be output at `libs/android`
+ 
+###Build Steps with GCC
+1. Run the build script. The binaries will be output at `libs/android`
 
  ```
  $./build-android.sh
  ```
 
+###Build Steps with clang
+1. Run the build script. The binaries will be output at `libs/android/clang`
+
+ ```
+ $./build-android-clang.sh
+ ```
+ 
 ##3.2 OSX and iOS
 
 ###Requirements
