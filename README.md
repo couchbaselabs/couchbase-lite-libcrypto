@@ -1,8 +1,8 @@
 # couchbase-lite-libcrypto #
 
-Pre-built OpenSSL libcrypto static libraries for using with the SQLCipher.
+Pre-built OpenSSL libcrypto static libraries for using with the SQLCipher and cbforest.
 
-The OpenSSL version is [1.0.2d](https://github.com/openssl/openssl/releases/tag/OpenSSL_1_0_2d).
+The OpenSSL version is [1.0.2j](https://github.com/openssl/openssl/releases/tag/OpenSSL_1_0_2j).
 
 ##How to rebuild the binaries
 
@@ -48,7 +48,7 @@ $./generate-headers.sh
  $./build-android-clang.sh
  ```
  
-##3.2 OSX and iOS
+##3.2 OSX ~~and iOS~~
 
 ###Requirements
 1. XCode
