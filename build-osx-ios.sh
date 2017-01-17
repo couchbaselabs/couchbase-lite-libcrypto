@@ -126,21 +126,21 @@ lipo \
     "${BASE_TMP_OUTPUT_DIR}-x86_64/libcrypto.a" \
     -create -output ${OUTPUT_DIR}/libcrypto.a
 
-# Build iOS binaries:
-OUTPUT_DIR="libs/ios"
-rm -rf ${OUTPUT_DIR}
-mkdir ${OUTPUT_DIR}
+# # Build iOS binaries:
+# OUTPUT_DIR="libs/ios"
+# rm -rf ${OUTPUT_DIR}
+# mkdir ${OUTPUT_DIR}
 
-build_ios "armv7"
-build_ios "arm64"
-build_ios "x86_64"
-build_ios "i386"
+# build_ios "armv7"
+# build_ios "arm64"
+# build_ios "x86_64"
+# build_ios "i386"
 
-# Create fat binaries:
-BASE_TMP_OUTPUT_DIR="/tmp/openssl-ios"
-lipo \
-  "${BASE_TMP_OUTPUT_DIR}-armv7/libcrypto.a" \
-  "${BASE_TMP_OUTPUT_DIR}-arm64/libcrypto.a" \
-  "${BASE_TMP_OUTPUT_DIR}-i386/libcrypto.a" \
-  "${BASE_TMP_OUTPUT_DIR}-x86_64/libcrypto.a" \
-  -create -output ${OUTPUT_DIR}/libcrypto.a
+# # Create fat binaries:
+# BASE_TMP_OUTPUT_DIR="/tmp/openssl-ios"
+# lipo \
+#   "${BASE_TMP_OUTPUT_DIR}-armv7/libcrypto.a" \
+#   "${BASE_TMP_OUTPUT_DIR}-arm64/libcrypto.a" \
+#   "${BASE_TMP_OUTPUT_DIR}-i386/libcrypto.a" \
+#   "${BASE_TMP_OUTPUT_DIR}-x86_64/libcrypto.a" \
+#   -create -output ${OUTPUT_DIR}/libcrypto.a
