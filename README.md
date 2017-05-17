@@ -2,7 +2,7 @@
 
 Pre-built OpenSSL libcrypto static libraries for using with the SQLCipher and cbforest.
 
-The OpenSSL version is [1.0.2j](https://github.com/openssl/openssl/releases/tag/OpenSSL_1_0_2j).
+The OpenSSL version is [1.0.2j](https://github.com/openssl/openssl/releases/tag/OpenSSL_1_0_2j), except for the Windows Store builds which are [1.0.2k](https://github.com/Microsoft/openssl/tree/OpenSSL_1_0_2k_WinRT) and the source tree is not included in this repo.
 
 ##How to rebuild the binaries
 
@@ -99,3 +99,6 @@ Note that the build-windows.cmd script is configured with Visual Studio 2013.
  ```
  C:\couchbase-lite-libcrypto>build-windows.cmd
  ```
+##3.5 Windows Store
+
+Follow the instructions at [Microsoft's fork](https://github.com/Microsoft/openssl/tree/OpenSSL_1_0_2k_WinRT)
