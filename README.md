@@ -1,3 +1,5 @@
+⚠️ This repo is obsolete.  It was used in Couchbase Lite 1.x.
+
 # couchbase-lite-libcrypto #
 
 Pre-built OpenSSL libcrypto static libraries for using with the SQLCipher and cbforest.
